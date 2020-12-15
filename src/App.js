@@ -28,6 +28,14 @@ function App() {
           user,
         });
       });
+
+      // Get Authenticated User Playlists
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: 'SET_PLAYLISTS',
+          playlists,
+        });
+      });
     }
   }, []);
 
